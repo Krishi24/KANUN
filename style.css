@@ -8,7 +8,7 @@
 	height: 100vh;
 	width: 100%;
 	background-image: url(../img/best.jpg);
-	background-size: auto;
+	background-size: cover;
 	background-position: left;
 }
 nav{
@@ -29,6 +29,7 @@ span{
 	color: #0c2924;
 }
 nav ul li{
+	color: #4b1414;
 	list-style-type: none;
 	display: inline-block;
 	padding: 10px  25px;
@@ -40,7 +41,10 @@ nav ul li a{
 	text-transform: capitalize;
 }
 nav ul li a:hover{
-	color: rgba(5, 39, 8, 0);
+	background-color: #e537bf;
+	border-radius: 34px;
+	width: 25%;
+	height: 78%;
 	transition: .4s;
 }
 .btn{
