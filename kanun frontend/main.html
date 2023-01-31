@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Webpage Design</title>
+    <link rel="stylesheet" href="/static/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo"></h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <!-- <li><a href="#">Services</a></li> -->
+                    <li><a href="{{url_for('Emer') }}">Emergency Nos</a></li>
+                    <li><a href="{{url_for('search') }}">Act</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="{{url_for('index') }}">Updates</a></li>
+                    <li><a href="{{url_for('FAQ') }}">FAQ</a></li>
+                    <li><a href="{{url_for('login') }}">Community</a></li>
+                    <!-- <p class="message">Not registered? <a href="">Create an account</a></p> -->
+                </ul>
+            </div>
+
+            <!-- <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To text">
+                <a href="#"> <button class="btn">Search</button></a>
+            </div> -->
+
+        </div>
+        <div class="content">
+            <h1>KANUN <br><span>The Old </span> <br>Ironside</h1>
+            <!-- <p class="par">Kanun is a law-related website where you can simply acquire the summaries of legal papers,
+                actions, and laws.<br>You can also communicate with other users and learn about new government
+                initiatives on Kanun.</p> -->
+
+            <button class="cn"><a href="#">Contact Us</a></button>
+
+            <!-- <div class="form">
+                <h2>Login Here</h2>
+                <input type="email" name="email" placeholder="Enter Email Here">
+                <input type="password" name="" placeholder="Enter Password Here">
+                <button class="btnn"><a href="#">Login</a></button>
+
+                <p class="link">Don't have an account<br>
+                    <a href="#">Sign up </a> here</a>
+                </p>
+                <p class="liw">Log in with</p>
+
+                <div class="icons">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                </div>
+
+            </div> -->
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- course  -->
+    <section class="course">
+        <h1>Services We Provide</h1>
+        <p>Here's what we can do for you</p>
+        <div class="row">
+            <div class="Services-col">
+                <h3>Acts and Laws Summarization</h3>
+                <p>Using this feature will enable you to enter any keyword and get a summary of all the laws relevant to the keyword.</p>
+            </div>
+            <div class="Services-col">
+                <h3>Community</h3>
+                <p>This is an interactive feature wherein you can share your views and opinions along with other users.</p>
+            </div>
+            <div class="Services-col">
+                <h3>Legal Documents</h3>
+                <p>This feature will enable you to view and download all the legal documents required to follow all the different legal procedures.</p>
+            </div>
+            <div class="Services-col">
+                <h3>Schemes</h3>
+                <p>This feature of our website will help you stay updated with all the latest schemes and services that our government provides for the citizens. </p>
+            </div>
+            <div class="Services-col">
+                <h3>Legal Advice</h3>
+                <p>This feature will help you to get legal advice from highly qualified professionals.</p>
+            </div>
+        </div>
+
+        <!-- areas we work on  -->
+    </section class="Areas">
+    <h1>Our Practice Areas</h1>
+    <p>We have our entire Constitution divided into the following categories: <br> You can search for a keyword in any of the following categories of laws to get the most relevant solution to your search.</p>
+    <div class="row">
+        <div class="Areas-col">
+            <h3>Civil Laws</h3>
+            <p>Civil Law comprises of set of rules and regulations which helps in resolving disputes which are non-criminal in nature. They include laws that are concerned with the private affairs of citizens. For example, marriage and property ownership.</p>
+            <form class="search"  action="/civil" method="POST">
+                <label for="keyword">Keyword</label><br>
+                <input type="text" name="keyword"><br>
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <!-- <div class="row"> -->
+        <div class="Areas-col">
+            <h3>Property Laws</h3>
+            <p>Property law is the sum of rights and duties, privileges and no-rights, powers and liabilities, disabilities and immunities that exist with respect to things like legally protected claims to resources, such as land and personal property as well as intellectual property.</p>
+            <form class="search"  action="/property" method="POST">
+                <label for="keyword">Keyword</label><br>
+                <input type="text" name="keyword"><br>
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <!-- <div class="row"> -->
+        <div class="Areas-col">
+            <h3>Citizenship laws</h3>
+            <p>Citizenship is a legal status that means a person has a right to live in a state and that state cannot refuse them entry or deport them. This legal status may be conferred at birth, or, in some states, obtained through 'naturalisation'.</p>
+            <form class="search"  action="/citizenship" method="POST">
+                <label for="keyword">Keyword</label><br>
+                <input type="text" name="keyword" ><br>
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <!-- <div class="row"> -->
+        <div class="Areas-col">
+            <h3>Family Laws</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <form class="search" action="/data" method="POST">
+                <label for="keyword">Keyword</label><br>
+                <input type="text" name="keyword"><br>
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <!-- <div class="row"> -->
+        <div class="Areas-col">
+            <h3>Criminal Laws</h3>
+            <p>Criminal law is the body of law that relates to crime. It prescribes conduct perceived as threatening, harmful, or otherwise endangering to the property, health, safety, and moral welfare of people inclusive of one's self.</p>
+            <form class="search" action="/criminal" method="POST">
+                <label for="keyword">Keyword</label><br>
+                <input type="text" name="keyword"><br>
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <!-- <div class="row"> -->
+        <div class="Areas-col">
+            <h3>All Laws</h3>
+            <p>This section will enable you to search your keyword in all the laws irrespective of the category/type of law.</p>
+            <form class="search" action="/data" method="POST">
+                <label for="keyword">Keyword</label><br>
+                <input type="text" name="keyword"><br>
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
+
+    </div>
+    <section>
+
+    </section>
+
+    <!-- testimonials  -->
+    <section class="testimonials">
+        <h1>What Our Users Say</h1>
+        <p>We are extremely pleased for being able to help our users to get the right legal aid they require in a very systematic way. We are also very thankful to all our website users for their unbaised reviews and opinions about our website which encourages us to keep improving and keep going.</p>
+        <div class="row1">
+            <div class="testimonials-col">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo5TmPdRp9mhJQ4Unm0a8Bh0OXTRWHMNz0hQ&usqp=CAU"
+                    alt="">
+                <div>
+                    <p>{{user1.Review}}</p>
+
+                    <h3>{{ user1.username}}</h3>
+                    
+                    <i class="fa fa-star" aria-hidden="true">{{user1.Rating}}</i>
+                    <!-- <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i> -->
+                </div>
+            </div>
+            <div class="testimonials-col">
+                <img src="https://www.shutterstock.com/image-photo/handsome-smiling-young-man-portrait-260nw-2066727890.jpg"
+                    alt="">
+                <div>
+                    <!-- <p>This website is an all-inclusive place for any legal aid.</p> -->
+                    <p>{{ user2.Review }}</p>
+                    <h3>{{ user2.username }}</h3>
+                    <i class="fa fa-star" aria-hidden="true">{{ user2.Rating }}</i>
+                    <!-- <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i> -->
+                </div>
+            </div>
+            <div class="testimonials-col">
+                <img src="https://www.shutterstock.com/image-photo/indian-man-front-yellow-dilapidated-260nw-1098456038.jpg"
+                    alt="">
+                <div>
+                    <!-- <p>The websites concept of being able to search laws according to the categories is very unique and helpful.</p>
+                    <h3>Ayush Chaudhary</h3> -->
+                    <p>{{ user3.Review }}</p>
+                    <h3>{{ user3.username }}</h3>
+                    <i class="fa fa-star" aria-hidden="true">{{ user3.Rating }}</i>
+                    <!-- <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i> -->
+                </div>
+            </div>
+        </div>
+        <div class="row2">
+            <div class="testimonials-col">
+                <img src="https://www.shutterstock.com/image-photo/cheerful-traditional-indian-woman-260nw-557257591.jpg"
+                    alt="">
+                <div>
+                    <!-- <p></p> -->
+                    <p>{{ user4.Review }}</p>
+                    <h3>{{ user4.username }}</h3>
+                    <i class="fa fa-star" aria-hidden="true">{{ user4.Rating }}</i>
+                    <!-- <h3>Jyoti Kulkarni</h3> -->
+                    <!-- <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i> -->
+                </div>
+            </div>
+            <div class="testimonials-col">
+                <img src="https://www.shutterstock.com/image-photo/cheerful-young-indian-woman-outdoors-260nw-520322230.jpg"
+                    alt="">
+                <div>
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus quasi nisi hic obcaecati
+                        iusto?</p>
+                    <h3>Sima Bharadwaaj</h3> -->
+                    <!-- <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i> -->
+                    <p>{{ user5.Review }}</p>
+                    <h3>{{ user5.username }}</h3>
+                    <i class="fa fa-star" aria-hidden="true">{{ user5.Rating }}</i>
+
+                </div>
+            </div>
+            <div class="testimonials-col">
+                <img src="https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHw%3D&w=1000&q=80"
+                    alt="">
+                <div>
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus quasi nisi hic obcaecati
+                        iusto?</p>
+                    <h3>Justin Timberlake</h3>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i> -->
+                    <p>{{ user6.Review }}</p>
+                    <h3>{{ user6.username }}</h3>
+                    <i class="fa fa-star" aria-hidden="true">{{ user6.Rating }}</i>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+
+    <!-- Contact us  -->
+    <section class="cta">
+        <h1>Contact Our Experts For Any Law Related Query</h1>
+        <a href="" class="home-btn">Contact Us</a>
+
+    </section>
+
+    <!-- footer  -->
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis aliquid esse quibusdam vero veniam
+            voluptates harum? Mollitia laborum in deleniti, <br> voluptatibus aperiam. Asperiores ratione consequatur
+            commodi nostrum necessitatibus qui quas magnam libero earum.</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+            <i class="fa fa-youtube" aria-hidden="true"></i>
+        </div>
+        <section class="mainpage"></section>
+    </section>
+    <!-- this is the javascript for toggle menu  -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-268px";
+        }
+    </script>
+    <script src="https://wallpaperaccess.com/full/702858.jpg"></script>
+</body>
+
+</html>
