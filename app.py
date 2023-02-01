@@ -500,6 +500,7 @@ def criminal():
 @app.route('/civil', methods=['GET', 'POST'])
 def civil():
     str = ""
+    str2 = ""
     summary = ""
     nl = "<html > <body > <br > </body > </html >"
     if request.method == 'POST':
@@ -545,7 +546,12 @@ def civil():
                                 str = str+nl + \
                                     "<html><body><b>ArtDesc : </b></body></html>" + \
                                     (str1)+nl
+                    # str = '<html><body style="background-image: url("https: // wallpaperaccess.com/full/702858.jpg")">' + \
+                        # str+"</body></html>"
+                    str = """<html><body style = "background-image: url('https://wallpaperaccess.com/full/702858.jpg');">""" + \
+                        str + "</body></html>"
                     return (str)
+                    # return render_template("ArtDesc.html", ArtDesc=str)
         return 'Not found'
 
 
