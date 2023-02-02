@@ -197,7 +197,7 @@ def FAQ():
 
 @app.route('/Emer')
 def Emer():
-    return render_template('Emer.html')
+    return render_template('emergency.html')
 
 
 @app.route('/parameters')
@@ -337,6 +337,10 @@ def data():
                                 "<html><body><b>ArtDesc : </b></body></html>" + \
                                 (str1)+nl
             # str1 = "<html><body><i>"+str+"</i></body></html>"
+            str = nl+"""<html><body style = "background-image: url('/static/law1.jpg');background-repeat:no-repeat;background-size:cover;"><h1 style=" width: 100%;margin-top:-25px;margin-left:-7px;margin-bottom: 10px;border-radius:32px;background:black;padding: 10px;border-radius: 4px;color:white;">Summary Of Relevant Laws</h1><p style="color:white;background-color:black;opacity:0.5;"><b>""" + \
+                str + \
+                """</b > </p > <a href = more"""+obj + \
+                """ > """+nl+"""More </a></body > </html >"""
             return (str)
     return 'Not found'
 
@@ -389,6 +393,10 @@ def property():
                                 str = str+nl + \
                                     "<html><body><b>ArtDesc : </b></body></html>" + \
                                     (str1)+nl
+                        str = nl+"""<html><body style = "background-image: url('/static/law1.jpg');background-repeat:no-repeat;background-size:cover;"><h1 style=" width: 100%;margin-top:-25px;margin-left:-7px;margin-bottom: 10px;border-radius:32px;background:black;padding: 10px;border-radius: 4px;color:white;">Summary Of Relevant Laws</h1><p style="color:white;background-color:black;opacity:0.5;"><b>""" + \
+                            str + \
+                            """</b > </p > <a href = more"""+obj + \
+                            """ > """+nl+"""More </a></body > </html >"""
                         return (str)
         return 'Not found'
 
@@ -441,6 +449,10 @@ def citizenship():
                                 str = str+nl + \
                                     "<html><body><b>ArtDesc : </b></body></html>" + \
                                     (str1)+nl
+                    str = nl+"""<html><body style = "background-image: url('/static/law1.jpg');background-repeat:no-repeat;background-size:cover;"><h1 style=" width: 100%;margin-top:-25px;margin-left:-7px;margin-bottom: 10px;border-radius:32px;background:black;padding: 10px;border-radius: 4px;color:white;">Summary Of Relevant Laws</h1><p style="color:white;background-color:black;opacity:0.5;"><b>""" + \
+                        str + \
+                        """</b > </p > <a href = more"""+obj + \
+                        """ > """+nl+"""More </a></body > </html >"""
                     return (str)
         return 'Not found'
 
@@ -493,6 +505,10 @@ def criminal():
                                 str = str+nl + \
                                     "<html><body><b>ArtDesc : </b></body></html>" + \
                                     (str1)+nl
+                    str = nl+"""<html><body style = "background-image: url('/static/law1.jpg');background-repeat:no-repeat;background-size:cover;"><h1 style=" width: 100%;margin-top:-25px;margin-left:-7px;margin-bottom: 10px;border-radius:32px;background:black;padding: 10px;border-radius: 4px;color:white;">Summary Of Relevant Laws</h1><p style="color:white;background-color:black;opacity:0.5;"><b>""" + \
+                        str + \
+                        """</b > </p > <a href = more"""+obj + \
+                        """ > """+nl+"""More </a></body > </html >"""
                     return (str)
         return 'Not found'
 
@@ -546,13 +562,29 @@ def civil():
                                 str = str+nl + \
                                     "<html><body><b>ArtDesc : </b></body></html>" + \
                                     (str1)+nl
-                    # str = '<html><body style="background-image: url("https: // wallpaperaccess.com/full/702858.jpg")">' + \
-                        # str+"</body></html>"
-                    str = """<html><body style = "background-image: url('https://wallpaperaccess.com/full/702858.jpg');">""" + \
-                        str + "</body></html>"
+                    str = nl+"""<html><body style = "background-image: url('/static/law1.jpg');background-repeat:no-repeat;background-size:cover;"><h1 style=" width: 100%;margin-top:-25px;margin-left:-7px;margin-bottom: 10px;border-radius:32px;background:black;padding: 10px;border-radius: 4px;color:white;">Summary Of Relevant Laws</h1><p style="color:white;background-color:black;opacity:0.5;"><b>""" + \
+                        str + \
+                        """</b > </p > <a href = more"""+obj + \
+                        """ > """+nl+"""More </a></body > </html >"""
                     return (str)
-                    # return render_template("ArtDesc.html", ArtDesc=str)
         return 'Not found'
+
+
+@app.route('/more<obj>')
+def more(obj):
+    # nl = "<html > <body > <br > </body > </html >"
+    lis = []
+    with open("C:\\Users\\Bhoomika\\KANUN_Inheritance\\COI.json", encoding='utf-8') as JsonFile:
+        data = json.load(JsonFile)
+        jsonData = data["laws"]
+        for i in range(35):
+            if obj in jsonData[i]['Name']:
+                lis.append(jsonData[i])
+        # str = """<html><body style = "background-image: url('/static/law1.jpg');background-repeat:no-repeat;background-size:cover;"><h1 style=" width: 100%;margin-top:-25px;margin-left:-7px;margin-bottom: 10px;border-radius:32px;background:black;padding: 10px;border-radius: 4px;color:white;">Summary Of Relevant Laws</h1><p style="color:white;background-color:black;opacity:0.5;"><b>""" + \
+        #     str + \
+        #     """</b > </p ></body></html>"""
+
+        return render_template('ArtDesc.html', ArtDesc=lis)
 
 
 # @app.route('/search', methods=['POST', 'GET'])
@@ -598,7 +630,7 @@ def review():
             user6 = Review.query.filter_by(id=ID).first()
             return render_template('main.html', user1=user1, user2=user2, user3=user3, user4=user4, user5=user5, user6=user6)
         else:
-            return jsonify(ID)
+            return render_template('Review.html')
     return render_template('review_form.html', form=form1)
 
 
@@ -666,7 +698,8 @@ class ReviewForm(FlaskForm):
         min=5, max=200)], render_kw={"placeholder": "Username"})
     Review = StringField(validators=[InputRequired(), Length(
         min=5, max=200)], render_kw={"placeholder": "Enter Review Here"})
-    Rating = FloatField(validators=[InputRequired()])
+    Rating = FloatField(validators=[InputRequired()], render_kw={
+                        "placeholder": "Rating"})
     Submit = SubmitField("Submit")
 
 
