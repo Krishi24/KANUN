@@ -1,8 +1,30 @@
+
+
+
 *{
     margin: 0;
-    padding: 0;
+    padding: 2px;
+    font-family: 'Tinos', serif;
+    text-align: center;
 }
-
+.forms{
+    color: #000000;
+    font-family:'PT Serif', serif ;
+    background-image: url("https://cdn.wallpapersafari.com/15/8/Sbxy0Y.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #999999;
+}
+.btnn{
+    color: #aa9166;
+    background-color: #000000;
+    border: 1px solid #aa916a;
+    font-size: 20px;
+    font-family: 'PT Serif', serif;
+}
+.btnn:hover {
+    border: 1px solid transparent;
+  }
 .main{
     width: 100%;
     background-image: url("https://wallpaperaccess.com/full/1506528.jpg");
@@ -11,139 +33,58 @@
     background-size: cover;
     height: 100vh;
 }
-
-.navbar{
-    width: 1379px;
-    height: 65px;
-    padding: 0%;
-    border: 4px;
-    text-align: right ;
-    margin: 0px;
-    background-color: #000;
-    border-radius: 15px; 
-    box-shadow: 0 2px 4px 0 rgba(34, 5, 5, 0)
-    
-
-}
-
-.icon{
-    width: 200px;
-    float: left;
-    height: 70px;
-}
-
-.logo{
-    color: #ff7200;
-    font-size: 35px;
-    font-family: Arial;
-    padding-left: 20px;
-    float: left;
-    padding-top: 10px;
-    margin-top: 5px
-}
-
-.menu{
-    width: 400px;
-    float: left;
-    height: 70px;
-}
-
-ul{
-    float: left;
-    display: flex;
-    /* justify-content: center;  */
-    align-items: center;
-}
-
-ul li{
-    list-style: none;
-    margin-left: 62px;
-    margin-top: 27px;
-    font-size: 14px;
-}
-
-ul li a{
-    text-decoration: none;
-    color: rgb(247, 237, 237);
-    font-family: Arial;
-    font-weight: bold;
-    transition: 0.4s ease-in-out;
-    text-align: left;
-}
-
-ul li a:hover{
-    color: #ff7200;
-}
-
-
-.content{
-    width: 1200px;
-    height: auto;
-    margin: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: #1b0000;
-    position: relative;
-    font-style: italic;
-    font-family: 'Bitter', serif;
-    
-}
-
-.content .par{
-    padding-left: 20px;
-    padding-bottom: 15px;
-    color: rgb(243, 242, 237);
-    font-family: 'PT Serif', serif; 
-    letter-spacing: 1px;
-    line-height: 43px;
-    font-weight:bolder;
-    font-size: 15px;
-}
-
-.content h1{
+.h1{
+    /* background-color: #0a0a0a; */
+    color: #aa9166;
+    /* box-sizing: border-box; */
     font-family: 'PT Serif', serif;
-    font-size: 50px;
-    padding-left: 20px;
-    font-weight: 1200;
-    margin-top: 9%;
-    letter-spacing: 2px;
-}
-
-.content .cn{
-    width: 160px;
-    height: 40px;
-    background: #ff7200;
-    border: none;
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 10px;
-    margin-left: 20px;
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: .4s ease;
-    
-}
-
-.content .cn a{
-    text-decoration: none;
-    color: rgb(248, 240, 240);
-    transition: .3s ease;
-}
-
-.cn:hover{
-    background-color: rgb(11, 11, 11);
-}
-
-.content span{
-    color: #f3f3f3;
     font-weight: bolder;
-    font-size: 65px;
-    font-family: 'Bitter', serif;
-    font-weight: 800;
+    text-align: center;
+    border-radius: 32px;
+}
+input{
+    color: #aa9166;
+    background-color: #000000;
+    font-weight: bold;
+    font-family: 'PT Serif', serif;
+    font-style: italic;
+    font-size: 20px;
+    margin-top: 12px;
+    padding: 5px;
+    width: 300px;
+    border-radius: 32px;
+    border-color: #aa9166;
+    border-style: double;
+    margin-top: 62px;
+    border: 90px;
+    margin: 50%;
 
 }
+.textarea:hover {
+    border: 1px solid transparent;
+  }
 
-
+textarea{
+    background-color: #000000;
+    color: #aa9166;
+    border-radius: 22px;
+    width: 300px;
+    border: 30px;
+}
+.textarea:hover {
+    border: 1px solid transparent;
+  }
+button{
+    background-color: #0a0a0a;
+    color: #aa9166;
+    padding: 3px;
+    margin: 12px;
+    box-shadow: #f8f9fa;
+    border-style: groove;
+    border-color: #aa916a;
+    width: 10%;
+    /* width: 150px;  */
+}  
 
 * contact us  */
 .cta{
