@@ -22,8 +22,9 @@ button {
 * {
     margin: 0;
     padding: 0;
-    font-family: "Josefin Sans", sans-serif;
+    font-family: 'Roboto Slab', serif;
     outline: none;
+    font-weight: bolder;
 }
 
 html {
@@ -31,7 +32,7 @@ html {
 }
 
 body {
-    background-color: #f0f8fd;
+    background-color: #b69d74;
 }
 
 /* end of common styles */
@@ -49,7 +50,7 @@ body {
 .left {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    background-color: #1aa1f5;
+    background-color: #1F2839;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,8 +119,8 @@ body {
 .btn-top {
     width: 8rem;
     background-color: #fff;
-    color: #1aa1f5;
-    border: 0.1rem solid #1aa1f5;
+    color:  #1F2839;
+    border: 0.1rem solid #1F2839;
     border-radius: 3rem;
     font-size: 1.4rem;
     font-weight: bold;
@@ -143,7 +144,7 @@ body {
 
 .middle-content i {
     font-size: 4rem;
-    color: #1aa1f5;
+    color: #1F2839;
     margin-bottom: 2rem;
 }
 
@@ -161,7 +162,7 @@ body {
 .middle-content button {
     margin: 0.8rem 0;
     padding: 0.5rem;
-    border: 0.1rem solid #1aa1f5;
+    border: 0.1rem solid #1F2839;
     border-radius: 4rem;
     font-size: 1.6rem;
     cursor: pointer;
@@ -169,7 +170,7 @@ body {
 }
 
 .sign-up {
-    background-color: #1aa1f5;
+    background-color: #1F2839;
     color: #fff;
 }
 
@@ -178,7 +179,7 @@ body {
 }
 
 .sign-up:hover {
-    background-color: #0f5d8d;
+    background-color: #05080f;
 }
 
 .log-in:hover {
@@ -255,7 +256,7 @@ body {
     content: "";
     width: 100%;
     height: 0.4rem;
-    background-color: #1aa1f5;
+    background-color: #1F2839;
     position: absolute;
     bottom: -2.5rem;
     left: 0;
@@ -275,11 +276,11 @@ body {
 }
 
 .login-page-nav li:hover a {
-    color: #1aa1f5;
+    color: #3d3424;
 }
 
 .login-page-nav i {
-    color: #1aa1f5;
+    color: #362e21;
     font-size: 2rem;
 }
 
@@ -334,10 +335,10 @@ body {
 
 .login-form button {
     padding: 1rem 1.5rem;
-    background-color: #1aa1f5;
+    background-color: #aa9166;
     color: #fff;
     border-radius: 4rem;
-    border: 0.1rem solid #1aa1f5;
+    border: 0.1rem solid #aa9166;
     font-size: 1.5rem;
     font-weight: bold;
     margin-right: 1rem;
@@ -353,7 +354,7 @@ body {
 .login-form a {
     text-decoration: none;
     font-size: 1.6rem;
-    color: #1aa1f5;
+    color: #aa9166;
 }
 
 .login-footer {
@@ -375,7 +376,7 @@ body {
 
 .login-footer a {
     text-decoration: none;
-    color: #1aa1f5;
+    color: #aa9166;
 }
 
 /* end of login */
@@ -446,7 +447,7 @@ body {
 }
 
 .icons .active {
-    color: #1aa1f5;
+    color: #aa9166;
 }
 
 .search-bar {
@@ -467,7 +468,7 @@ body {
 
 .search-bar-input:focus {
     background-color: #fff;
-    border-color: #1aa1f5;
+    border-color: #aa9166;
 }
 
 .search-bar i {
@@ -697,7 +698,7 @@ body {
     background-color: #fff;
     color: #1aa1f5;
     padding: 0.7rem 0.5rem;
-    border: 0.1rem solid #1aa1f5;
+    border: 0.1rem solid  #1F2839;
     border-radius: 2rem;
     font-size: 1.6rem;
     cursor: pointer;
