@@ -1,169 +1,155 @@
-// const closeBtn = document.querySelector('.fa-times');
-// const postBtn = document.querySelector('button[type="button"]');
-// const modalWrapper = document.querySelector('.modal-wrapper');
-// const modal = document.querySelector('.modal');
+const questions = document.querySelectorAll(".question");
+const searchbar = document.querySelector("#searchbar");
+const bookmarksContainer = document.querySelector("#bookmarks-container");
+// const searchInput = document.querySelector("#search-input");
 
-// closeBtn.addEventListener('click', function() {
-//   modalWrapper.style.display = 'none';
-// });
 
-// postBtn.addEventListener('click', function() {
-//   // Get the value of the input and the selected options
-//   const inputValue = document.querySelector('.modal-input').value;
-//   const lawValue = document.querySelector('#laws').value;
-//   const credentialValue = document.querySelector('#credentials').value;
+ let bookmarkedQuestions = [];
+// Search questions
 
-//   // Do something with the input value, law value, and credential value
-//   console.log(inputValue, lawValue, credentialValue);
-
-//   // Clear the input and reselect the default options
-//   document.querySelector('.modal-input').value = '';
-//   document.querySelector('#laws').value = 'family';
-//   document.querySelector('#credentials').value = 'Lawyer';
-// });
-
-// // Show the modal when the modal wrapper is clicked
-// modalWrapper.addEventListener('click', function() {
-//   modalWrapper.style.display = 'block';
-// });
-
-// // Prevent the modal from closing when the modal itself is clicked
-// modal.addEventListener('click', function(event) {
-//   event.stopPropagation();
-// });
-
-const filterBtn = document.querySelector('.filter-btn');
-const dropdownMenu = document.querySelector('#law-types');
-
-filterBtn.addEventListener('click', function() {
-  dropdownMenu.classList.toggle('show');
-});
-
-// DOM Elements
-const mainPage = document.querySelector(".main-page");
-const loginPage = document.querySelector(".login-page");
-const middleContent = document.querySelector(".middle-content");
-const btnTop = document.querySelector(".btn-top");
-const newsFeedPage = document.querySelector(".feeds-page");
-const loginModal = document.querySelector(".login-modal");
-const modalX = document.querySelector(".login-modal i");
-const loginFormBtn = document.querySelector(".login-form-btn");
-const postBtn = document.querySelector(".post-btn");
-const modalWrapper = document.querySelector(".modal-wrapper");
-const modal = document.querySelector(".modal");
-const postModalX = document.querySelector(".modal-header i");
-const modalPostBtn = document.querySelector(".modal-header button");
-const modalFooterPlus = document.querySelector(".modal-footer span");
-const modalInput = document.querySelector(".modal-input");
-const user = document.querySelector(".user");
-const sidebar = document.querySelector(".sidebar");
-const sidebarWrapper = document.querySelector(".sidebar-wrapper");
-const xBtn = document.querySelector(".sidebar-header i");
-const toggle = document.querySelector(".toggle");
-const circle = document.querySelector(".circle");
-
-// Main Page
-const goToLoginPage = () => {
-  mainPage.style.display = "none";
-  loginPage.style.display = "grid";
-};
-
-middleContent.addEventListener("click", (e) => {
-  if (e.target.classList[1] === "main-btn") {
-    goToLoginPage();
-  }
-});
-
-btnTop.addEventListener("click", () => {
-  const inputUserInfo = document.querySelector(".user-info");
-  const inputPassword = document.querySelector(".password");
-  if (inputUserInfo.value !== "" && inputPassword.value !== "") {
-    mainPage.style.display = "none";
-    newsFeedPage.style.display = "block";
-  } else {
-    goToLoginPage();
-    loginModal.style.display = "block";
-  }
-});
-
-// Login Page
-modalX.addEventListener("click", () => {
-  loginModal.style.display = "none";
-});
-
-loginFormBtn.addEventListener("click", () => {
-  const loginUserInfo = document.querySelector(".login-user-info");
-  const loginPassword = document.querySelector(".login-password");
-  if (loginUserInfo.value !== "" && loginPassword.value !== "") {
-    loginPage.style.display = "none";
-    newsFeedPage.style.display = "block";
-  } else {
-    loginModal.style.display = "block";
-  }
-});
-
-// News feed page
-// Post modal
-postBtn.addEventListener("click", () => {
-  modal.style.display = "block";
-  modalWrapper.classList.add("modal-wrapper-display");
-});
-
-const changeOpacity = (x) => {
-  modalPostBtn.style.opacity = x;
-  modalFooterPlus.style.opacity = x;
-};
-
-postModalX.addEventListener("click", () => {
-  modal.style.display = "none";
-  modalWrapper.classList.remove("modal-wrapper-display");
-  if (modalInput.value !== "") {
-    modalInput.value = "";
-    changeOpacity(0.5);
-  }
-});
-
-modalInput.addEventListener("keypress", (e) => {
-  if (e.target.value !== "") {
-    changeOpacity(1);
-  }
-});
-
-modalInput.addEventListener("blur", (e) => {
-  if (e.target.value === "") {
-    changeOpacity(0.5);
-  }
-});
-
-// Sidebar
-user.addEventListener("click", () => {
-  sidebar.classList.add("sidebar-display");
-  sidebarWrapper.classList.add("sidebar-wrapper-display");
-});
-
-xBtn.addEventListener("click", () => {
-  sidebar.classList.remove("sidebar-display");
-  sidebarWrapper.classList.remove("sidebar-wrapper-display");
-});
-
-// Dark mode
-const darkElements1 = document.querySelectorAll(".dark-mode-1");
-const darkElements2 = document.querySelectorAll(".dark-mode-2");
-const lightText = document.querySelectorAll(".light-text");
-const borders = document.querySelectorAll(".border");
-
-toggle.addEventListener("click", () => {
-  circle.classList.toggle("move");
-  Array.from(darkElements1).map((darkEl1) => {
-    darkEl1.classList.toggle("dark-1");
+ searchbar.addEventListener("input", function() {
+  const searchTerm = this.value.toLowerCase();
+  const questions = document.querySelectorAll(".question");
+  questions.forEach(function(question) {
+    const questionText = question.querySelector(".question-text").textContent;
+    if (questionText.toLowerCase().indexOf(searchTerm) !== -1) {
+      question.style.display = "block";
+    } else {
+      question.style.display = "none";
+    }
   });
-  Array.from(darkElements2).map((darkEl2) => {
-    darkEl2.classList.toggle("dark-2");
+});
+
+// Submit answers
+questions.forEach(question => {
+  const submitAnswerButton = question.querySelector(".submit-answer");
+  const answerInput = question.querySelector(".answer-input");
+  const questionAnswer = question.querySelector(".question-answer");
+ submitAnswerButton.addEventListener("click", () => {
+    if (answerInput.value) {
+      questionAnswer.textContent = answerInput.value;
+      bookmarkedQuestions.forEach(question => {
+      if (question.questionText === questionText) {
+        question.answer = answerInput.value;
+      }
+    });
+      answerInput.value = "";
+    }
   });
-  Array.from(lightText).map((lText) => {
-    lText.classList.toggle("light");
+});
+// Bookmark questions
+questions.forEach(question => {
+  const bookmarkButton = question.querySelector(".bookmark-button");
+  const questionText = question.querySelector(".question-text").textContent;
+  const answerInput = question.querySelector(".answer-input");
+   const submitAnswerButton = question.querySelector(".submit-answer");
+   const questionAnswer = question.querySelector(".question-answer");
+  submitAnswerButton.addEventListener("click", () => {
+    if (answerInput.value) {
+      questionAnswer.textContent = answerInput.value;
+      bookmarkedQuestions.forEach(bookmarkedQuestion => {
+        if (bookmarkedQuestion.questionText === questionText) {
+          bookmarkedQuestion.answer = answerInput.value;
+        }
+      });
+      answerInput.value = "";
+    }
   });
-  Array.from(borders).map((border) => {
-    border.classList.toggle("border-color");
+
+  bookmarkButton.addEventListener("click", () => {
+    document.getElementById("show-bookmarks").addEventListener("click", function() {
+  document.getElementById("bookmarks-container").style.display = "block";
+});
+document.getElementById("hide-bookmarks").addEventListener("click", function() {
+  document.getElementById("bookmarks-container").style.display = "none";
+});
+
+    if (question.classList.contains("bookmarked")) {
+      question.classList.remove("bookmarked");
+      const index = bookmarkedQuestions.findIndex(q => q.questionText === questionText);
+      bookmarkedQuestions.splice(index, 1);
+    } else {
+      question.classList.add("bookmarked");
+      bookmarkedQuestions.push({ questionText, answer: questionAnswer.textContent });
+    }
+    renderBookmarks();
   });
+});
+
+
+
+function renderBookmarks() {
+  bookmarksContainer.innerHTML = "";
+  const questions = document.querySelectorAll(".question");
+  [...questions].forEach(question => {
+    if (question.classList.contains("bookmarked")) {
+      const questionText = question.querySelector(".question-text").textContent;
+      const questionAnswer = question.querySelector(".question-answer").textContent;
+      const bookmark = document.createElement("div");
+      bookmark.classList.add("bookmark");
+      bookmark.innerHTML = `<p><strong>Question:</strong> ${questionText}</p><p><strong>Answer:</strong> ${questionAnswer}</p>`;
+      bookmarksContainer.appendChild(bookmark);
+    }
+  
+  });
+}
+
+const form = document.querySelector("#add-question");
+const questionInput = document.querySelector("#add-question-input");
+const questionsContainer = document.querySelector("#questions");
+
+function addQuestion() {
+  const questionText = questionInput.value;
+  if (!questionText) {
+    return;
+  }
+  const questionHTML = `
+    <div class="question">
+      <h2 class="question-text">${questionText}</h2>
+      <button class="bookmark-button">Bookmark</button>
+      <p class="question-answer"></p>
+      <input type="text" class="answer-input" placeholder="Enter your answer here">
+      <button class="submit-answer">Submit</button>
+    </div>
+  `;
+  questionsContainer.insertAdjacentHTML("afterbegin", questionHTML);
+  // questionsContainer.innerHTML += questionHTML;
+  
+  questionInput.value = "";
+}
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  addQuestion();
+});
+
+const addQuestionButton = document.querySelector("#add-question-button");
+addQuestionButton.addEventListener("click", addQuestion);
+
+questionsContainer.addEventListener("click", (event) => {
+  if (event.target.classList.contains("submit-answer")) {
+    const question = event.target.closest(".question");
+    const answerInput = question.querySelector(".answer-input");
+    const answer = answerInput.value;
+    if (!answer) {
+      return;
+    }
+    const answerParagraph = question.querySelector(".question-answer");
+    answerParagraph.textContent = answer;
+  } else if (event.target.classList.contains("bookmark-button")) {
+    const question = event.target.closest(".question");
+    const questionText = question.querySelector(".question-text").textContent;
+    const questionAnswer = question.querySelector(".question-answer");
+
+    if (question.classList.contains("bookmarked")) {
+      question.classList.remove("bookmarked");
+      const index = bookmarkedQuestions.findIndex(q => q.questionText === questionText);
+      bookmarkedQuestions.splice(index, 1);
+    } else {
+      question.classList.add("bookmarked");
+      bookmarkedQuestions.push({ questionText, answer: questionAnswer.textContent });
+    }
+    renderBookmarks();
+  
+  }
 });
