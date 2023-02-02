@@ -2,12 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    
+    font-family: 'Roboto Slab', serif;
+    font-weight: bolder;
 }
 body{
     background-color: rgb(252, 227, 174);
-    background-image: url(https://media.istockphoto.com/photos/gavel-and-scales-of-justice-on-desk-in-law-office-picture-id479252540?k=6&m=479252540&s=612x612&w=0&h=245YihHfFNUc_X7jWrAKZZYR07udk5Px9_L_6Ah7lJY=);
+    background-image: url("https://media.istockphoto.com/photos/gavel-and-scales-of-justice-on-desk-in-law-office-picture-id479252540?k=6&m=479252540&s=612x612&w=0&h=245YihHfFNUc_X7jWrAKZZYR07udk5Px9_L_6Ah7lJY=");
     background-repeat: no-repeat;
     background-size: cover;
     /* height:100%; */
@@ -72,4 +72,15 @@ body{
 }
 #accordion label + input[type="radio"]:checked + .content{
     max-height: 400px;
+}
+.content{
+    font-family: 'Roboto Slab', serif;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.p{
+    font-family: 'Roboto Slab', serif;
+    font-style: italic;
+    font-weight: bolder;
 }
