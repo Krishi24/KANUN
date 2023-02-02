@@ -28,6 +28,43 @@
    
         <div class="forms">
             <form action="/review" method="POST">
+                <h1>Give Your Feedback</h1>
+                <div class="id">
+                    <input type="text" placeholder="First name">
+                    <i class="far fa-user"></i>
+
+                </div>
+                <div class="id">
+                    <input type="text" placeholder="Last name">
+                    <i class="far fa-review"></i>
+
+                </div>
+                <textarea name="" id="" cols="15" rows="5" placeholder="Write Your Review here"></textarea>
+
+
+                <div class="id">
+                    <input type="text" placeholder="Rating">
+                    <!-- <i class="far fa-user"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i> -->
+                
+
+                </div>
+                <div>
+                       <i class="far fa-user"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                
+                <button >Submit</button>
                 {{ form.hidden_tag() }}
                 {{ form.username }}
                 {{ form.Review }}
